@@ -91,8 +91,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "AKTalkSDK.framework/Headers", "*.{h,m}"
-  spec.exclude_files = 'Classes/Simulator/**/*'
+  #spec.source_files  = "AKTalkSDK.framework/Headers", "*.{h,m}"
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -130,7 +129,7 @@ Pod::Spec.new do |spec|
   #  If your library depends on compiler flags you can set them in the xcconfig hash
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
-  spec.vendored_frameworks = 'AKTalkSDK.framework'
+  #spec.vendored_frameworks = 'AKTalkSDK.framework'
 
   spec.requires_arc = true
 
