@@ -2,7 +2,8 @@
 //  AKTalkSDK.h
 //  AKTalkSDK
 //
-//  Created by mac_mini2 on 2025/1/3.
+//  Created by 许志明 on 2020/2/6.
+//  Copyright © 2020 akuvox. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,7 +15,7 @@ FOUNDATION_EXPORT double AKTalkSDKVersionNumber;
 FOUNDATION_EXPORT const unsigned char AKTalkSDKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AKTalkSDK/PublicHeader.h>
-
+#import <AKTalkSDK/AKTalkManager.h>
 #import <AKTalkSDK/AKSIPModel.h>
 #import <AKTalkSDK/AKIncomingModel.h>
-#import <AKTalkSDK/AKTalkManager.h>
+

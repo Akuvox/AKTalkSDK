@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "AKSIPModel.h"
+#import "AKIncomingModel.h"
 
-@class AKIncomingModel,AKSIPModel;
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol AKTalkManagerDelegate <NSObject>
@@ -34,17 +35,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)AkTalkDidReceiveEstablishMonitor;
 
 /// called when monitor section finished
-/// @param finishCode e.g 7:Certificate verification failed!
-- (void)AkTalkDidReceiveFinishMonitor:(int)finishCode;
+- (void)AkTalkDidReceiveFinishMonitor;
 
 @optional
 
 /// called to get the notification of whether the door is opened successfully.
 /// @param res BLE_OPEN_RES:0=SUCCESS, -1=INVALID CODE, -2=INVALID DEVICE STATE, -3=INVALID RAND CODE, -4=INVALID DISTANCE,101=TIMEOUT
 - (void)AkTalkDidReceiveBleOpenDoorResult:(NSString *)res;
-
-/// Get the video parameter callback
-- (void)AkTalkVideoFPS:(int)fps bps:(int)bps lossRate:(int)lossRate rtt:(int)rtt;
 
 @end
 
@@ -74,16 +71,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// Logout the SIP Server
 - (void)logoutSipServer;
 
-/// set sip backend online
-/// - Parameter on: NO(default): SIP disable in the  background, YES:SIP registration in the background.
+/// set sip backend on line
 - (void)setSipBackendOnline:(BOOL)on;
-
-/// set SIP status
-/// - Parameter on: NO: SIP disable, YES: SIP registration
-/// ps:This function must be enabled before calling it
-/// [[AKTalkManager sharedAKTalkManager] setSipBackendOnline:YES]
-/// Otherwise, the function call will not take effect
-- (void)turnSIPAccountOn:(BOOL)on;
 
 - (BOOL)isSipBackendOnline;
 
