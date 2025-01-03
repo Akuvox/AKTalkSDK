@@ -92,7 +92,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.source_files  = "AKTalkSDK.framework/Headers", "*.{h,m}"
-  #spec.vendored_feameworks = 'AKTalkSDK.framework'
+  spec.exclude_files = 'Classes/Simulator/**/*'
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -119,7 +119,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.framework  = "SomeFramework"
-  spec.frameworks = "Metal", "MetalKit", "VideoToolbox", "AKTalkSDK"
+  spec.frameworks = "Metal", "MetalKit", "VideoToolbox"
 
   # spec.library   = "iconv"
   spec.libraries = "c++", "resolv", "resolv.9", "System.B"
@@ -130,6 +130,7 @@ Pod::Spec.new do |spec|
   #  If your library depends on compiler flags you can set them in the xcconfig hash
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
+  spec.vendored_frameworks = 'AKTalkSDK.framework'
 
   spec.requires_arc = true
 
