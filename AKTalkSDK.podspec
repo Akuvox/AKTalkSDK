@@ -24,9 +24,9 @@ Pod::Spec.new do |spec|
   spec.source_files = 'AKTalkSDK/**/*.h' # 确保路径正确
   spec.public_header_files = 'AKTalkSDK/AKTalkSDK.framework/Headers/*.h' # 确保路径正确
   # 添加以下行以排除 arm64 架构
-  spec.pod_target_xcconfig = {
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
-    'SWIFT_OPTIMIZATION_LEVEL' => '-Onone',
-    'SWIFT_VERSION' => '5.0'
-  }
+#  spec.pod_target_xcconfig = {
+#    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
+#    'SWIFT_OPTIMIZATION_LEVEL' => '-Onone',
+#    'SWIFT_VERSION' => '5.0'
+#  }
 end
