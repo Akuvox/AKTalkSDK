@@ -1,9 +1,8 @@
-
 Pod::Spec.new do |spec|
 
   spec.name         = "AKTalkSDK"
   spec.version      = "2.1.5"
-  spec.license      = "MIT"
+  spec.license      = { :type => 'MIT', :file => 'LICENSE' }
 
   spec.summary      = "A lightweight scanning component based on system API in Swift5"
   spec.description  = <<-DESC
@@ -12,7 +11,7 @@ Pod::Spec.new do |spec|
 
   spec.author             = { "zhongbin" => "zhongbin.wen@akuvox.com" }
   spec.homepage     = "https://github.com/Akuvox/AKTalkSDK"
-  spec.source = { :git => 'git@github.com:Akuvox/AKTalkSDK.git', :tag => spec.version.to_s }
+  spec.source = { :git => 'https://github.com/Akuvox/AKTalkSDK.git', :tag => spec.version.to_s }
 
   spec.requires_arc = true
 
@@ -20,17 +19,14 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "12.0"
 
   spec.static_framework = true
+
   spec.ios.vendored_frameworks = 'AKTalkSDK/AKTalkSDK.framework'
-  spec.source_files = 'AKTalkSDK/AKTalkSDK.framework/Headers/*' # 或者根据需要调整路径
-  spec.public_header_files = 'AKTalkSDK/AKTalkSDK.framework/Headers/*.h'
-
-
+  spec.source_files = 'AKTalkSDK/**/*.h' # 确保路径正确
+  spec.public_header_files = 'AKTalkSDK/AKTalkSDK.framework/Headers/*.h' # 确保路径正确
   # 添加以下行以排除 arm64 架构
   spec.pod_target_xcconfig = {
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
-    'SWIFT_OPTIMIZATION_LEVEL' => '-Onone'
+    'SWIFT_OPTIMIZATION_LEVEL' => '-Onone',
+    'SWIFT_VERSION' => '5.0'
   }
-
-
-
 end
