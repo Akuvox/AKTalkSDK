@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "AKSIPModel.h"
+#import "AKIncomingModel.h"
 
-@class AKIncomingModel,AKSIPModel;
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol AKTalkManagerDelegate <NSObject>
