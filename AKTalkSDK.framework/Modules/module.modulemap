@@ -1,6 +1,0 @@
-framework module AKTalkSDK {
-  umbrella header "AKTalkSDK.h"
-  export *
-
-  module * { export * }
-}
